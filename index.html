@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PitchFlow - AI 보컬 트레이닝 | 실시간 음정 분석 & 성대 건강 평가</title>
+    <meta name="description" content="PitchFlow는 AI 기반 실시간 음정 분석, 비브라토 감지, 성대 건강 평가를 제공하는 프리미엄 보컬 트레이닝 앱입니다. 지금 무료로 다운로드하세요.">
+    <meta name="keywords" content="보컬 트레이닝, 음정 분석, 피치 감지, 성대 건강, AI 코칭, 노래 연습, 비브라토, PitchFlow">
+    <meta property="og:title" content="PitchFlow - AI 보컬 트레이닝">
+    <meta property="og:description" content="실시간 음정 분석 & AI 코칭으로 노래 실력을 업그레이드하세요">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pitchflow.app">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PitchFlow - AI 보컬 트레이닝">
+    <meta name="twitter:description" content="실시간 음정 분석 & AI 코칭으로 노래 실력을 업그레이드하세요">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 네비게이션 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">🎵</span>
+                <span class="logo-text">PitchFlow</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">기능</a>
+                <a href="#vocal-health">성대 건강</a>
+                <a href="#ai-coaching">AI 코칭</a>
+                <a href="#download" class="nav-cta">무료 다운로드</a>
+            </div>
+            <button class="mobile-menu" id="mobileMenu" aria-label="메뉴 열기">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles" id="particles"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>AI 기반 보컬 트레이닝</span>
+                </div>
+                <h1 class="hero-title">
+                    당신의 목소리를<br>
+                    <span class="gradient-text">완벽하게</span> 분석합니다
+                </h1>
+                <p class="hero-desc">
+                    실시간 음정 감지, 비브라토 분석, 성대 건강 평가까지.<br>
+                    AI가 당신만을 위한 30가지+ 맞춤 피드백을 제공합니다.
+                </p>
+                <div class="hero-actions">
+                    <a href="https://play.google.com/store/apps/details?id=com.pitchflow.vocal" class="btn btn-primary" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                        Google Play에서 다운로드
+                    </a>
+                    <a href="#features" class="btn btn-outline">
+                        기능 살펴보기
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">30+</span>
+                        <span class="stat-label">AI 피드백</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-value">YIN</span>
+                        <span class="stat-label">정밀 알고리즘</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-value">4종</span>
+                        <span class="stat-label">성대 건강 지표</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="pitch-visualizer" id="pitchVisualizer">
+                            <canvas id="pitchCanvas"></canvas>
+                        </div>
+                        <div class="phone-ui">
+                            <div class="note-display">
+                                <span class="current-note" id="currentNote">A4</span>
+                                <span class="note-freq">440 Hz</span>
+                            </div>
+                            <div class="pitch-bar">
+                                <div class="pitch-indicator" id="pitchIndicator"></div>
+                                <div class="pitch-center"></div>
+                            </div>
+                            <div class="ai-feedback">
+                                <span class="ai-icon">🤖</span>
+                                <span class="ai-text">음정이 안정적이에요! 비브라토를 추가해보세요.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 기능 섹션 -->
+    <section class="features" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">핵심 기능</span>
+                <h2 class="section-title">프로 보컬리스트의 도구를<br><span class="gradient-text">당신의 손 안에</span></h2>
+                <p class="section-desc">전문 음성 분석 소프트웨어의 기능을 모바일로 경험하세요</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card feature-large">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">🎯</div>
+                    </div>
+                    <h3>실시간 피치 감지</h3>
+                    <p>YIN 알고리즘 기반으로 밀리초 단위의 정밀한 음정 분석. 스크롤링 피아노 키보드에서 내 음정이 정확한지 실시간으로 확인하세요.</p>
+                    <div class="feature-visual pitch-wave" id="featureWave"></div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">🌊</div>
+                    </div>
+                    <h3>비브라토 분석</h3>
+                    <p>자연스러운 비브라토를 자동 감지하고, 주파수와 진폭 파형으로 시각화합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">🤖</div>
+                    </div>
+                    <h3>AI 맞춤 코칭</h3>
+                    <p>30가지 이상의 피드백으로 음정, 텐션, 다이나믹스를 실시간 교정합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">🎵</div>
+                    </div>
+                    <h3>메트로놈 & 청음 훈련</h3>
+                    <p>박자감과 음감을 동시에 키우는 인터벌 트레이닝 기능을 제공합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">📊</div>
+                    </div>
+                    <h3>피치 그래프 & 녹음</h3>
+                    <p>연습 기록을 녹음하고 피치 그래프로 시각화하여 성장을 추적하세요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 성대 건강 섹션 -->
+    <section class="vocal-health" id="vocal-health">
+        <div class="section-container">
+            <div class="vocal-health-layout">
+                <div class="vh-content">
+                    <span class="section-tag">독보적 기능</span>
+                    <h2 class="section-title">전문가급<br><span class="gradient-text">성대 건강 평가</span></h2>
+                    <p class="section-desc">
+                        병원에서나 쓰이던 전문 음성 분석 지표를 앱에서 바로 확인하세요.
+                        Jitter, Shimmer, HNR, CPP — 4가지 핵심 지표로 성대 건강 상태를 종합 평가합니다.
+                    </p>
+                    <div class="health-metrics">
+                        <div class="metric">
+                            <div class="metric-header">
+                                <span class="metric-name">Jitter</span>
+                                <span class="metric-value good">0.8%</span>
+                            </div>
+                            <div class="metric-bar"><div class="metric-fill" style="width: 85%"></div></div>
+                            <span class="metric-desc">음정 주기의 미세 변동률</span>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-header">
+                                <span class="metric-name">Shimmer</span>
+                                <span class="metric-value good">2.1%</span>
+                            </div>
+                            <div class="metric-bar"><div class="metric-fill" style="width: 78%"></div></div>
+                            <span class="metric-desc">음량의 미세 변동률</span>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-header">
+                                <span class="metric-name">HNR</span>
+                                <span class="metric-value good">22 dB</span>
+                            </div>
+                            <div class="metric-bar"><div class="metric-fill" style="width: 90%"></div></div>
+                            <span class="metric-desc">조화음 대 잡음 비율</span>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-header">
+                                <span class="metric-name">CPP</span>
+                                <span class="metric-value good">12.5</span>
+                            </div>
+                            <div class="metric-bar"><div class="metric-fill" style="width: 82%"></div></div>
+                            <span class="metric-desc">켑스트럼 피크 돌출도</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="vh-visual">
+                    <div class="health-score-circle">
+                        <svg viewBox="0 0 200 200" class="score-svg">
+                            <circle cx="100" cy="100" r="85" class="score-bg"/>
+                            <circle cx="100" cy="100" r="85" class="score-fill" id="scoreFill"/>
+                        </svg>
+                        <div class="score-text">
+                            <span class="score-value" id="scoreValue">92</span>
+                            <span class="score-label">성대 건강 점수</span>
+                        </div>
+                    </div>
+                    <div class="health-status">
+                        <span class="status-badge good">✅ 양호</span>
+                        <p>전반적으로 성대 상태가 건강합니다</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI 코칭 섹션 -->
+    <section class="ai-coaching" id="ai-coaching">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">AI 기술</span>
+                <h2 class="section-title">개인 보컬 코치가<br><span class="gradient-text">24시간 대기 중</span></h2>
+            </div>
+            <div class="coaching-cards">
+                <div class="coaching-card">
+                    <div class="coaching-chat">
+                        <div class="chat-bubble ai">
+                            <span class="chat-avatar">🤖</span>
+                            <div class="chat-content">
+                                <p>고음에서 긴장이 느껴져요. 호흡을 더 깊게 하고, 복식호흡으로 지지해보세요.</p>
+                            </div>
+                        </div>
+                        <div class="chat-bubble user">
+                            <div class="chat-content">
+                                <p>🎤 A4 노트 다시 시도...</p>
+                            </div>
+                        </div>
+                        <div class="chat-bubble ai">
+                            <span class="chat-avatar">🤖</span>
+                            <div class="chat-content">
+                                <p>훨씬 좋아졌어요! 음정이 안정적이고 텐션도 줄었어요. 👏</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>실시간 피드백</h3>
+                    <p>노래하는 동안 실시간으로 위치, 텐션, 다이나믹스에 대한 맞춤 피드백을 받으세요.</p>
+                </div>
+                <div class="coaching-card">
+                    <div class="coaching-visual">
+                        <div class="feedback-tags">
+                            <span class="tag tag-pitch">🎯 음정 정확도</span>
+                            <span class="tag tag-tension">💆 텐션 분석</span>
+                            <span class="tag tag-dynamics">📈 다이나믹스</span>
+                            <span class="tag tag-vibrato">🌊 비브라토 품질</span>
+                            <span class="tag tag-breath">💨 호흡 패턴</span>
+                            <span class="tag tag-range">🎼 음역대 확장</span>
+                        </div>
+                    </div>
+                    <h3>30가지+ 분석 항목</h3>
+                    <p>음정, 텐션, 호흡, 비브라토, 다이나믹스 등 전문적인 분석이 가능합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 비교 섹션 -->
+    <section class="comparison" id="comparison">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">왜 PitchFlow인가?</span>
+                <h2 class="section-title">다른 앱에는 없는<br><span class="gradient-text">차별화된 기능</span></h2>
+            </div>
+            <div class="comparison-table-wrap">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>기능</th>
+                            <th class="highlight">PitchFlow</th>
+                            <th>일반 보컬 앱</th>
+                            <th>전문 소프트웨어</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>실시간 피치 감지</td>
+                            <td class="highlight">✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>비브라토 파형 분석</td>
+                            <td class="highlight">✅</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>성대 건강 평가</td>
+                            <td class="highlight">✅</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>AI 맞춤 코칭</td>
+                            <td class="highlight">✅ 30+</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                        </tr>
+                        <tr>
+                            <td>모바일 지원</td>
+                            <td class="highlight">✅</td>
+                            <td>✅</td>
+                            <td>❌</td>
+                        </tr>
+                        <tr>
+                            <td>무료 사용</td>
+                            <td class="highlight">✅</td>
+                            <td>일부</td>
+                            <td>❌ 유료</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 섹션 -->
+    <section class="cta-section" id="download">
+        <div class="section-container">
+            <div class="cta-content">
+                <h2 class="cta-title">지금 바로 시작하세요</h2>
+                <p class="cta-desc">무료로 다운로드하고, AI와 함께 보컬 실력을 한 단계 업그레이드하세요.</p>
+                <a href="https://play.google.com/store/apps/details?id=com.pitchflow.vocal" class="btn btn-primary btn-large" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                    Google Play에서 무료 다운로드
+                </a>
+                <p class="cta-note">Android 8.0 이상 · 3세 이상 · 무료</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="logo-icon">🎵</span>
+                    <span class="logo-text">PitchFlow</span>
+                    <p>AI 기반 프리미엄 보컬 트레이닝</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>제품</h4>
+                        <a href="#features">기능</a>
+                        <a href="#vocal-health">성대 건강</a>
+                        <a href="#ai-coaching">AI 코칭</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>소셜</h4>
+                        <a href="#" id="twitter-link">X (Twitter)</a>
+                        <a href="#" id="blog-link">블로그</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>다운로드</h4>
+                        <a href="https://play.google.com/store/apps/details?id=com.pitchflow.vocal" target="_blank">Google Play</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PitchFlow by JejuBucketList. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
