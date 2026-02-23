@@ -1,0 +1,5 @@
+# PitchFlow Landing Page - robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://misebear.github.io/pitchflow-landing/sitemap.xml
