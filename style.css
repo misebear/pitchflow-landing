@@ -112,8 +112,19 @@ img {
     color: var(--text-primary);
 }
 
-.logo-icon {
-    font-size: 1.4rem;
+.logo-icon-svg {
+    flex-shrink: 0;
+    border-radius: 8px;
+}
+
+.logo-pitch {
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.logo-flow {
+    font-weight: 300;
+    color: var(--accent-2);
 }
 
 .nav-links {

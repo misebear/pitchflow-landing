@@ -1,30 +1,88 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PitchFlow - AI 보컬 트레이닝 | 실시간 음정 분석 & 성대 건강 평가</title>
-    <meta name="description" content="PitchFlow는 AI 기반 실시간 음정 분석, 비브라토 감지, 성대 건강 평가를 제공하는 프리미엄 보컬 트레이닝 앱입니다. 지금 무료로 다운로드하세요.">
-    <meta name="keywords" content="보컬 트레이닝, 음정 분석, 피치 감지, 성대 건강, AI 코칭, 노래 연습, 비브라토, PitchFlow">
-    <meta property="og:title" content="PitchFlow - AI 보컬 트레이닝">
-    <meta property="og:description" content="실시간 음정 분석 & AI 코칭으로 노래 실력을 업그레이드하세요">
+    <meta name="description"
+        content="PitchFlow는 AI 기반 실시간 음정 분석, 비브라토 감지, 성대 건강 평가(Jitter, Shimmer, HNR, CPP)를 제공하는 무료 보컬 트레이닝 앱입니다. YIN 알고리즘 기반 정밀 피치 분석과 30가지+ AI 코칭.">
+    <meta name="keywords"
+        content="보컬 트레이닝, 음정 분석, 피치 감지, 성대 건강, AI 코칭, 노래 연습, 비브라토, PitchFlow, pitch detection app, vocal training, vocal health, singing app, free">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="JejuBucketList">
+    <meta name="theme-color" content="#D98A8A">
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <!-- 캐노니컬 및 다국어 -->
+    <link rel="canonical" href="https://misebear.github.io/pitchflow-landing/">
+    <link rel="alternate" hreflang="ko" href="https://misebear.github.io/pitchflow-landing/">
+    <link rel="alternate" hreflang="en" href="https://misebear.github.io/pitchflow-landing/">
+    <link rel="alternate" hreflang="x-default" href="https://misebear.github.io/pitchflow-landing/">
+    <!-- Open Graph -->
+    <meta property="og:title" content="PitchFlow - AI 보컬 트레이닝 | 무료 음정 분석 & 성대 건강 평가">
+    <meta property="og:description"
+        content="YIN 알고리즘 기반 실시간 음정 분석, 30가지+ AI 코칭, 성대 건강 평가(Jitter/Shimmer/HNR/CPP)를 무료로. 지금 다운로드하세요.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pitchflow.app">
+    <meta property="og:url" content="https://misebear.github.io/pitchflow-landing/">
+    <meta property="og:site_name" content="PitchFlow">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="PitchFlow - AI 보컬 트레이닝">
-    <meta name="twitter:description" content="실시간 음정 분석 & AI 코칭으로 노래 실력을 업그레이드하세요">
+    <meta name="twitter:description" content="실시간 음정 분석 & AI 코칭으로 노래 실력을 업그레이드하세요. 무료!">
+    <!-- 구조화 데이터 (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PitchFlow",
+      "operatingSystem": "Android",
+      "applicationCategory": "MusicApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KRW"
+      },
+      "description": "AI 기반 실시간 음정 분석, 비브라토 감지, 성대 건강 평가를 제공하는 무료 보컬 트레이닝 앱",
+      "url": "https://play.google.com/store/apps/details?id=com.pitchflow.vocal",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "ratingCount": "1"
+      }
+    }
+    </script>
+    <!-- 폰트 & 스타일 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- 네비게이션 -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                <span class="logo-icon">🎵</span>
-                <span class="logo-text">PitchFlow</span>
+                <svg class="logo-icon-svg" viewBox="0 0 64 64" width="36" height="36">
+                    <defs>
+                        <linearGradient id="navBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D98A8A" />
+                            <stop offset="100%" style="stop-color:#C47070" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="64" height="64" rx="14" fill="url(#navBg)" />
+                    <text x="32" y="26" text-anchor="middle" fill="#FFFBF2" font-family="Inter,Arial,sans-serif"
+                        font-weight="800" font-size="20">Pitch</text>
+                    <text x="32" y="48" text-anchor="middle" fill="#FFFBF2" font-family="Inter,Arial,sans-serif"
+                        font-weight="300" font-size="20">Flow</text>
+                </svg>
+                <span class="logo-text"><span class="logo-pitch">Pitch</span><span class="logo-flow">Flow</span></span>
             </a>
             <div class="nav-links">
                 <a href="#features">기능</a>
@@ -59,13 +117,19 @@
                     AI가 당신만을 위한 30가지+ 맞춤 피드백을 제공합니다.
                 </p>
                 <div class="hero-actions">
-                    <a href="https://play.google.com/store/apps/details?id=com.pitchflow.vocal" class="btn btn-primary" target="_blank" rel="noopener">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                    <a href="https://play.google.com/store/apps/details?id=com.pitchflow.vocal" class="btn btn-primary"
+                        target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path
+                                d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                        </svg>
                         Google Play에서 다운로드
                     </a>
                     <a href="#features" class="btn btn-outline">
                         기능 살펴보기
-                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                            <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                        </svg>
                     </a>
                 </div>
                 <div class="hero-stats">
@@ -177,7 +241,9 @@
                                 <span class="metric-name">Jitter</span>
                                 <span class="metric-value good">0.8%</span>
                             </div>
-                            <div class="metric-bar"><div class="metric-fill" style="width: 85%"></div></div>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: 85%"></div>
+                            </div>
                             <span class="metric-desc">음정 주기의 미세 변동률</span>
                         </div>
                         <div class="metric">
@@ -185,7 +251,9 @@
                                 <span class="metric-name">Shimmer</span>
                                 <span class="metric-value good">2.1%</span>
                             </div>
-                            <div class="metric-bar"><div class="metric-fill" style="width: 78%"></div></div>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: 78%"></div>
+                            </div>
                             <span class="metric-desc">음량의 미세 변동률</span>
                         </div>
                         <div class="metric">
@@ -193,7 +261,9 @@
                                 <span class="metric-name">HNR</span>
                                 <span class="metric-value good">22 dB</span>
                             </div>
-                            <div class="metric-bar"><div class="metric-fill" style="width: 90%"></div></div>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: 90%"></div>
+                            </div>
                             <span class="metric-desc">조화음 대 잡음 비율</span>
                         </div>
                         <div class="metric">
@@ -201,7 +271,9 @@
                                 <span class="metric-name">CPP</span>
                                 <span class="metric-value good">12.5</span>
                             </div>
-                            <div class="metric-bar"><div class="metric-fill" style="width: 82%"></div></div>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: 82%"></div>
+                            </div>
                             <span class="metric-desc">켑스트럼 피크 돌출도</span>
                         </div>
                     </div>
@@ -209,8 +281,8 @@
                 <div class="vh-visual">
                     <div class="health-score-circle">
                         <svg viewBox="0 0 200 200" class="score-svg">
-                            <circle cx="100" cy="100" r="85" class="score-bg"/>
-                            <circle cx="100" cy="100" r="85" class="score-fill" id="scoreFill"/>
+                            <circle cx="100" cy="100" r="85" class="score-bg" />
+                            <circle cx="100" cy="100" r="85" class="score-fill" id="scoreFill" />
                         </svg>
                         <div class="score-text">
                             <span class="score-value" id="scoreValue">92</span>
@@ -341,8 +413,12 @@
             <div class="cta-content">
                 <h2 class="cta-title">지금 바로 시작하세요</h2>
                 <p class="cta-desc">무료로 다운로드하고, AI와 함께 보컬 실력을 한 단계 업그레이드하세요.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.pitchflow.vocal" class="btn btn-primary btn-large" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                <a href="https://play.google.com/store/apps/details?id=com.pitchflow.vocal"
+                    class="btn btn-primary btn-large" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path
+                            d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                    </svg>
                     Google Play에서 무료 다운로드
                 </a>
                 <p class="cta-note">Android 8.0 이상 · 3세 이상 · 무료</p>
@@ -355,8 +431,21 @@
         <div class="footer-container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <span class="logo-icon">🎵</span>
-                    <span class="logo-text">PitchFlow</span>
+                    <svg class="logo-icon-svg" viewBox="0 0 64 64" width="36" height="36">
+                        <defs>
+                            <linearGradient id="footBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D98A8A" />
+                                <stop offset="100%" style="stop-color:#C47070" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="64" height="64" rx="14" fill="url(#footBg)" />
+                        <text x="32" y="26" text-anchor="middle" fill="#FFFBF2" font-family="Inter,Arial,sans-serif"
+                            font-weight="800" font-size="20">Pitch</text>
+                        <text x="32" y="48" text-anchor="middle" fill="#FFFBF2" font-family="Inter,Arial,sans-serif"
+                            font-weight="300" font-size="20">Flow</text>
+                    </svg>
+                    <span class="logo-text"><span class="logo-pitch">Pitch</span><span
+                            class="logo-flow">Flow</span></span>
                     <p>AI 기반 프리미엄 보컬 트레이닝</p>
                 </div>
                 <div class="footer-links">
@@ -373,7 +462,8 @@
                     </div>
                     <div class="footer-col">
                         <h4>다운로드</h4>
-                        <a href="https://play.google.com/store/apps/details?id=com.pitchflow.vocal" target="_blank">Google Play</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.pitchflow.vocal"
+                            target="_blank">Google Play</a>
                     </div>
                 </div>
             </div>
@@ -385,4 +475,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
